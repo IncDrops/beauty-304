@@ -41,6 +41,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const bookingTypes = [
   { type: 'Hotels', icon: BedDouble },
@@ -83,6 +84,12 @@ export function BookingWidget({ category }: BookingWidgetProps) {
           <CardDescription className="text-muted-foreground mt-1">
             {category.description}
           </CardDescription>
+          <Link
+            href="/travel-deals"
+            className="text-accent hover:underline font-headline text-xl mt-2 inline-block"
+          >
+            Name Your Price: Hotels, Flights & More
+          </Link>
         </div>
       </CardHeader>
       <CardContent className="p-6 pt-0">

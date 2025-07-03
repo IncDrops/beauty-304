@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { categories, type Category } from '@/lib/data';
 import { Sparkles } from 'lucide-react';
 import { BookingWidget } from '@/components/booking-widget';
+import TravelDealsForm from "@/components/travel/TravelDealsForm";
 
 export default function Home() {
   const categoryMap = categories.reduce((acc, category) => {
