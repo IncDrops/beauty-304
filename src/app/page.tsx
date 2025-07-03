@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { categories, type Category } from '@/lib/data';
 import { Sparkles } from 'lucide-react';
+import { BookingWidget } from '@/components/booking-widget';
 
 export default function Home() {
   const categoryMap = categories.reduce((acc, category) => {
@@ -10,7 +11,7 @@ export default function Home() {
 
   const mainSlugs = ['makeup', 'skincare'];
   const mediumSlugs = ['haircare', 'lingerie', 'heels', 'fragrance'];
-  const listSlugs = ['pleasure', 'wellness', 'travel-getaways'];
+  const listSlugs = ['pleasure', 'wellness', 'entrepreneurial'];
   const safetySlugs = [
     'safety-tools',
     'home-security',
@@ -18,7 +19,7 @@ export default function Home() {
     'self-defense',
     'sexual-protection-awareness',
   ];
-  const entrepreneurialCategory = categoryMap['entrepreneurial'];
+  const travelCategory = categoryMap['travel-getaways'];
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -85,6 +86,7 @@ export default function Home() {
           <div className="lg:col-span-2 p-6 rounded-2xl border bg-card space-y-4">
             {listSlugs.map((slug) => {
               const category = categoryMap[slug];
+              if (!category) return null;
               return (
                 <Link
                   key={slug}
@@ -122,21 +124,14 @@ export default function Home() {
             </div>
           </div>
 
-          {entrepreneurialCategory && (
-            <Link
-              href={`/category/${entrepreneurialCategory.slug}`}
-              className="md:col-span-2 lg:col-span-4 p-8 rounded-2xl bg-primary/20 hover:bg-primary/30 transition-colors group flex flex-col md:flex-row items-center text-center md:text-left gap-6"
-            >
-              <entrepreneurialCategory.Icon className="w-16 h-16 text-accent" />
-              <div>
-                <h3 className="font-headline text-3xl font-bold">
-                  {entrepreneurialCategory.name}
-                </h3>
-                <p className="text-muted-foreground mt-1 max-w-lg">
-                  {entrepreneurialCategory.description}
-                </p>
-              </div>
-            </Link>
+          {travelCategory && (
+            <div className="md:col-span-2 lg:col-span-4">
+              <BookingWidget category={{
+                  name: travelCategory.name,
+                  slug: travelCategory.slug,
+                  description: travelCategory.description,
+              }} />
+            </div>
           )}
         </div>
       </section>
