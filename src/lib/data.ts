@@ -1,5 +1,9 @@
 import {
+  Briefcase,
+  Crown,
+  Gem,
   Heart,
+  HeartPulse,
   Home,
   KeyRound,
   Laptop,
@@ -7,6 +11,7 @@ import {
   Plane,
   Scissors,
   Shield,
+  ShieldCheck,
   Sparkles,
   Wind,
   type LucideIcon,
@@ -60,10 +65,28 @@ export const categories: Category[] = [
     Icon: Scissors,
   },
   {
+    name: 'Lingerie',
+    slug: 'lingerie',
+    description: 'Feel confident and sexy with our curated lingerie collections.',
+    Icon: Gem,
+  },
+  {
+    name: 'Heels',
+    slug: 'heels',
+    description: 'Step up your style with the perfect pair of heels.',
+    Icon: Crown,
+  },
+  {
     name: 'Fragrance',
     slug: 'fragrance',
     description: 'Discover your signature scent from curated collections.',
     Icon: Wind,
+  },
+  {
+    name: 'Pleasure',
+    slug: 'pleasure',
+    description: 'Explore and enhance your personal pleasure and intimacy.',
+    Icon: HeartPulse,
   },
   {
     name: 'Wellness',
@@ -76,6 +99,13 @@ export const categories: Category[] = [
     slug: 'travel-getaways',
     description: 'Escape and recharge with our curated travel picks.',
     Icon: Plane,
+  },
+  {
+    name: 'Sexual Protection/Awareness',
+    slug: 'sexual-protection-awareness',
+    description:
+      'Prioritize your health with essential protection and awareness resources.',
+    Icon: ShieldCheck,
   },
   {
     name: 'Safety Tools',
@@ -100,6 +130,12 @@ export const categories: Category[] = [
     slug: 'self-defense',
     description: 'Empower yourself with knowledge and training.',
     Icon: Shield,
+  },
+  {
+    name: 'Entrepreneurial',
+    slug: 'entrepreneurial',
+    description: 'Tools and resources for the aspiring female entrepreneur.',
+    Icon: Briefcase,
   },
 ];
 
@@ -181,4 +217,9 @@ export const products: Record<string, Product[]> = {
   'home-security': [],
   'digital-safety': [],
   'self-defense': [],
+  lingerie: [],
+  heels: [],
+  pleasure: [],
+  'sexual-protection-awareness': [],
+  entrepreneurial: [],
 };
