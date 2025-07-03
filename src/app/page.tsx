@@ -12,7 +12,7 @@ export default function Home() {
 
   const mainSlugs = ['makeup', 'skincare'];
   const mediumSlugs = ['haircare', 'lingerie', 'heels', 'fragrance'];
-  const listSlugs = ['pleasure', 'wellness', 'entrepreneurial'];
+  const listSlugs = ['pleasure', 'wellness', 'entertainment', 'entrepreneurial'];
   const safetySlugs = [
     'safety-tools',
     'home-security',

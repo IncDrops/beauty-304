@@ -7,6 +7,7 @@ import {
   Home,
   KeyRound,
   Laptop,
+  Music,
   Paintbrush,
   Plane,
   Scissors,
@@ -93,6 +94,12 @@ export const categories: Category[] = [
     slug: 'wellness',
     description: 'Invest in your well-being with self-care essentials.',
     Icon: Heart,
+  },
+  {
+    name: 'Entertainment',
+    slug: 'entertainment',
+    description: 'Music, Books, and Games for your leisure.',
+    Icon: Music,
   },
   {
     name: 'Travel Getaways',
@@ -222,4 +229,5 @@ export const products: Record<string, Product[]> = {
   pleasure: [],
   'sexual-protection-awareness': [],
   entrepreneurial: [],
+  entertainment: [],
 };
