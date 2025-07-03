@@ -15,9 +15,9 @@ import { Button } from '@/components/ui/button';
 import { LayoutGrid, List } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
-export default function CategoryPage() {
+export default function CategoryPage({ params: paramsProp }: { params?: { slug: string } }) {
   const params = useParams();
-  const slug = params.slug as string;
+  const slug = (paramsProp?.slug || params.slug) as string;
 
   const [priceRange, setPriceRange] = useState([0, 100]);
   const [selectedRating, setSelectedRating] = useState(0);
@@ -29,13 +29,14 @@ export default function CategoryPage() {
 
   useEffect(() => {
     if (slug) {
+      const categoryData = categories.find((c) => c.slug === slug);
+      setCategory(categoryData);
       const categoryProducts = allProducts[slug] || [];
       const filteredProducts = categoryProducts
         .filter((product) => product.price >= priceRange[0] && product.price <= priceRange[1])
         .filter((product) => product.rating >= selectedRating)
         .filter((product) => (isFeatured ? product.isFeatured : true));
       setProducts(filteredProducts);
-      setCategory(categories.find((c) => c.slug === slug));
     }
   }, [slug, priceRange, selectedRating, isFeatured]);
 
