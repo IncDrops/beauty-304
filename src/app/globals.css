@@ -6,13 +6,17 @@ body {
   font-family: 'Alegreya', serif;
 }
 
+.glassmorphic {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+}
+
 @layer base {
   :root {
-    --background: 345 65% 15%;
+    --background: 345 85% 9%;
     --foreground: 0 0% 100%;
     --card: 345 50% 25%;
     --card-foreground: 0 0% 100%;
-    --popover: 345 50% 25%;
+    --popover: 345 65% 15%;
     --popover-foreground: 0 0% 100%;
     --primary: 330 83% 70%;
     --primary-foreground: 330 10% 10%;
@@ -43,11 +47,11 @@ body {
     --sidebar-ring: 322 78% 58%;
   }
   .dark {
-    --background: 345 65% 15%;
+    --background: 345 85% 9%;
     --foreground: 0 0% 100%;
     --card: 345 50% 25%;
     --card-foreground: 0 0% 100%;
-    --popover: 345 50% 25%;
+    --popover: 345 65% 15%;
     --popover-foreground: 0 0% 100%;
     --primary: 330 83% 70%;
     --primary-foreground: 330 10% 10%;
@@ -60,7 +64,7 @@ body {
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 345 50% 40%;
-    --input: 345 50% 45%;
+    --input: 345 20% 90%;
     --ring: 322 78% 58%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
