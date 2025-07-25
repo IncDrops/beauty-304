@@ -16,6 +16,7 @@ import { ArrowRight, Calendar, UserCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { format } from 'date-fns';
+import { useEffect, useState } from 'react';
 
 type ProductCardProps = {
   product: Product;
@@ -23,6 +24,11 @@ type ProductCardProps = {
 };
 
 export function ProductCard({ product, layout = 'grid' }: ProductCardProps) {
+  const [formattedDate, setFormattedDate] = useState('');
+
+  useEffect(() => {
+    setFormattedDate(format(new Date(product.publishedDate), 'PPP'));
+  }, [product.publishedDate]);
 
   const isGridLayout = layout === 'grid';
 
@@ -59,7 +65,7 @@ export function ProductCard({ product, layout = 'grid' }: ProductCardProps) {
           </div>
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4" />
-            <time dateTime={product.publishedDate}>{format(new Date(product.publishedDate), 'PPP')}</time>
+            <time dateTime={product.publishedDate}>{formattedDate}</time>
           </div>
         </div>
         <CardContent className="p-0 flex-grow text-pink-100/70">
