@@ -40,11 +40,9 @@ export function Header() {
           <NavigationMenuList>
             {mainCats.map((category) => (
               <NavigationMenuItem key={category.slug}>
-                <Link href={`/${category.slug}`} legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    {category.name}
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                  <Link href={`/${category.slug}`}>{category.name}</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
 
