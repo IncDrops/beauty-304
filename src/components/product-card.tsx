@@ -27,6 +27,7 @@ export function ProductCard({ product, layout = 'grid' }: ProductCardProps) {
   const [formattedDate, setFormattedDate] = useState('');
 
   useEffect(() => {
+    // Renders the date only on the client
     setFormattedDate(format(new Date(product.publishedDate), 'PPP'));
   }, [product.publishedDate]);
 
@@ -35,17 +36,17 @@ export function ProductCard({ product, layout = 'grid' }: ProductCardProps) {
   return (
     <Card
       className={cn(
-        'transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-primary/20 w-full flex flex-col h-full glassmorphic overflow-hidden'
+        'transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-primary/20 w-full flex flex-col h-full glassmorphic overflow-hidden group'
       )}
     >
-      <CardHeader className="p-0 relative h-56">
+      <CardHeader className="p-0 relative h-56 overflow-hidden">
         <Image
           src={product.image}
           alt={product.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover opacity-50 group-hover:opacity-75 transition-opacity"
-          data-ai-hint="product image"
+          className="object-cover opacity-50 group-hover:opacity-75 transition-all duration-300 group-hover:scale-105"
+          data-ai-hint={product.aiHint || "product image"}
         />
         {product.isFeatured && (
           <Badge className="absolute top-4 right-4" variant="default">
