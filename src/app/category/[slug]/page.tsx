@@ -33,7 +33,7 @@ export default function CategoryPage({ params: paramsProp }: { params?: { slug: 
       setCategory(categoryData);
       const categoryProducts = allProducts[slug] || [];
       const filteredProducts = categoryProducts
-        .filter((product) => product.price >= priceRange[0] && product.price <= priceRange[1])
+        .filter((product) => product.price >= priceRange[0] && product.price <= price_range[1])
         .filter((product) => product.rating >= selectedRating)
         .filter((product) => (isFeatured ? product.isFeatured : true));
       setProducts(filteredProducts);

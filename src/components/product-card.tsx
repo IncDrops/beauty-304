@@ -51,40 +51,29 @@ export function ProductCard({ product, layout = 'grid' }: ProductCardProps) {
   return (
     <Card
       className={cn(
-        'transition-all duration-300 ease-in-out hover:shadow-xl w-full flex',
-        isGridLayout ? 'flex-col' : 'flex-row items-center'
+        'transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-primary/20 w-full flex flex-col h-full glassmorphic overflow-hidden'
       )}
     >
-      <CardHeader
-        className={cn(
-          isGridLayout ? 'p-0' : 'p-4',
-          !isGridLayout && 'w-1/4'
+      <CardHeader className="p-0 relative h-56">
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover opacity-50 group-hover:opacity-75 transition-opacity"
+          data-ai-hint="product image"
+        />
+        {product.isFeatured && (
+          <Badge className="absolute top-4 right-4" variant="default">
+            Featured Pick
+          </Badge>
         )}
-      >
-        <div
-          className={cn(
-            'relative',
-            isGridLayout ? 'w-full h-56' : 'w-full aspect-square'
-          )}
-        >
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover rounded-t-lg"
-            data-ai-hint="product image"
-          />
-          {product.isFeatured && (
-            <Badge className="absolute top-2 right-2" variant="default">
-              Featured Pick
-            </Badge>
-          )}
-        </div>
       </CardHeader>
-      <div className={cn('flex flex-col flex-1', isGridLayout ? 'p-6' : 'p-4')}>
-        <CardTitle className="font-headline text-xl mb-2">{product.name}</CardTitle>
-        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+      <div className="flex flex-col flex-1 p-6">
+        <CardTitle className="font-headline text-2xl mb-2 text-white">
+          {product.name}
+        </CardTitle>
+        <div className="flex items-center gap-4 text-sm text-pink-200/80 mb-4">
           <div className="flex items-center gap-1">
             <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
             <span>{product.rating.toFixed(1)}</span>
@@ -93,22 +82,22 @@ export function ProductCard({ product, layout = 'grid' }: ProductCardProps) {
             ${product.price.toFixed(2)}
           </span>
         </div>
-        <CardContent className="p-0 flex-grow">
+        <CardContent className="p-0 flex-grow text-pink-100/70">
           {isLoading ? (
             <div className="space-y-2">
-              <Skeleton className="h-4 w-full" />
-              <Skeleton className="h-4 w-full" />
-              <Skeleton className="h-4 w-3/4" />
+              <Skeleton className="h-4 w-full bg-white/20" />
+              <Skeleton className="h-4 w-full bg-white/20" />
+              <Skeleton className="h-4 w-3/4 bg-white/20" />
             </div>
           ) : summary ? (
-            <p className="text-sm text-muted-foreground">{summary}</p>
+            <p className="text-sm">{summary}</p>
           ) : (
-            <CardDescription>
-              Click the button to get an AI-powered summary of user reviews.
+            <CardDescription className="text-pink-100/60">
+              {product.reviews.substring(0, 100)}...
             </CardDescription>
           )}
         </CardContent>
-        <CardFooter className="p-0 pt-4 flex-col sm:flex-row gap-2 items-stretch sm:items-center">
+        <CardFooter className="p-0 pt-6 flex-col sm:flex-row gap-2 items-stretch sm:items-center">
           <Button
             onClick={handleGenerateSummary}
             disabled={isLoading}
@@ -120,7 +109,7 @@ export function ProductCard({ product, layout = 'grid' }: ProductCardProps) {
           </Button>
           <Button asChild className="w-full">
             <Link href={product.affiliateLink} target="_blank">
-              View Deal
+              View Product
             </Link>
           </Button>
         </CardFooter>

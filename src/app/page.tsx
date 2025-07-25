@@ -1,6 +1,10 @@
+import { ProductCard } from '@/components/product-card';
 import { TravelChatbot } from '@/components/travel-chatbot';
+import { products } from '@/lib/data';
 
 export default function Home() {
+  const allProducts = Object.values(products).flat();
+
   return (
     <div className="container mx-auto px-4 py-12">
       <section className="mb-16">
@@ -15,8 +19,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="mb-16">
         <TravelChatbot />
+      </section>
+
+      <section>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {allProducts.map((product, index) => (
+            <div
+              key={product.id}
+              className={
+                index % 5 === 0 || index % 5 === 3
+                  ? 'md:col-span-2'
+                  : 'col-span-1'
+              }
+            >
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
