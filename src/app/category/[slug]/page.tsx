@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { categories, products as allProducts, type Product } from '@/lib/data';
 import { ProductCard } from '@/components/product-card';
@@ -19,8 +19,6 @@ export default function CategoryPage({ params: paramsProp }: { params?: { slug: 
   const params = useParams();
   const slug = (paramsProp?.slug || params.slug) as string;
 
-  const [priceRange, setPriceRange] = useState([0, 100]);
-  const [selectedRating, setSelectedRating] = useState(0);
   const [isFeatured, setIsFeatured] = useState(false);
   const [layout, setLayout] = useState<'grid' | 'list'>('grid');
 
@@ -33,12 +31,10 @@ export default function CategoryPage({ params: paramsProp }: { params?: { slug: 
       setCategory(categoryData);
       const categoryProducts = allProducts[slug] || [];
       const filteredProducts = categoryProducts
-        .filter((product) => product.price >= priceRange[0] && product.price <= priceRange[1])
-        .filter((product) => product.rating >= selectedRating)
         .filter((product) => (isFeatured ? product.isFeatured : true));
       setProducts(filteredProducts);
     }
-  }, [slug, priceRange, selectedRating, isFeatured]);
+  }, [slug, isFeatured]);
 
 
   if (!category) {
@@ -52,10 +48,6 @@ export default function CategoryPage({ params: paramsProp }: { params?: { slug: 
   return (
     <SidebarProvider>
       <FilterSidebar
-        priceRange={priceRange}
-        setPriceRange={setPriceRange}
-        selectedRating={selectedRating}
-        setSelectedRating={setSelectedRating}
         isFeatured={isFeatured}
         setIsFeatured={setIsFeatured}
       />

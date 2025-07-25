@@ -1,3 +1,4 @@
+
 import { ProductCard } from '@/components/product-card';
 import { TravelChatbot } from '@/components/travel-chatbot';
 import { products } from '@/lib/data';

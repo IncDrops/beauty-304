@@ -27,23 +27,13 @@ export type Category = {
 
 export type Product = {
   id: string;
-  name: string;
+  title: string;
   image: string;
-  price: number;
-  rating: number;
-  reviews: string;
-  affiliateLink: string;
+  author: string;
+  publishedDate: string;
+  excerpt: string;
+  href: string;
   isFeatured?: boolean;
-  attributes: {
-    brand?: string;
-    skinType?: 'Oily' | 'Dry' | 'Combination' | 'Sensitive' | 'Normal';
-    mood?: 'Relaxing' | 'Energizing' | 'Focus';
-    safetyLevel?: 'Low' | 'Medium' | 'High';
-    vibe?: 'Chic' | 'Natural' | 'Bold';
-    quietLevel?: 'Silent' | 'Whisper-Quiet' | 'Moderate';
-    power?: 'Battery' | 'Rechargeable' | 'Wired';
-    material?: 'Silicone' | 'Stainless Steel' | 'ABS Plastic';
-  };
 };
 
 export const categories: Category[] = [
@@ -150,117 +140,119 @@ export const products: Record<string, Product[]> = {
   makeup: [
     {
       id: 'mu1',
-      name: 'Radiant Glow Foundation',
+      title: 'Mastering the Smoky Eye: A Step-by-Step Guide',
       image: 'https://placehold.co/600x400',
-      price: 45.0,
-      rating: 4.8,
+      author: 'Jane Doe',
+      publishedDate: '2024-05-15',
+      excerpt: "The smoky eye is a timeless look that adds instant drama and sophistication. In this guide, we'll break down the technique into simple, easy-to-follow steps...",
+      href: '#',
       isFeatured: true,
-      reviews: "Love this foundation! It's lightweight but gives great coverage. It doesn't feel cakey at all and lasts all day. The shade match was perfect for me. Some users say it oxidizes a little, so maybe get a shade lighter.",
-      affiliateLink: '#',
-      attributes: { brand: 'GlowUp', skinType: 'Combination', vibe: 'Natural' },
     },
     {
       id: 'mu2',
-      name: 'Velvet Kiss Lipstick',
+      title: 'The Ultimate Guide to Finding Your Perfect Foundation Shade',
       image: 'https://placehold.co/600x400',
-      price: 28.0,
-      rating: 4.5,
-      reviews: "The color is so rich and vibrant. It feels very comfortable on the lips. It's not completely transfer-proof, but it wears off gracefully. A true matte finish without being too drying.",
-      affiliateLink: '#',
-      attributes: { brand: 'LuxeLips', vibe: 'Bold', material: 'ABS Plastic' },
+      author: 'Alex Rey',
+      publishedDate: '2024-05-10',
+      excerpt: "Finding the right foundation shade can be a game-changer. Say goodbye to guesswork with our comprehensive guide to understanding undertones and testing shades.",
+      href: '#',
     },
   ],
   skincare: [
     {
       id: 'sc1',
-      name: 'Hydra-Boost Serum',
+      title: 'Building a Skincare Routine for Glowing Skin',
       image: 'https://placehold.co/600x400',
-      price: 75.0,
-      rating: 4.9,
+      author: 'Dr. Evelyn Reed',
+      publishedDate: '2024-05-20',
+      excerpt: 'A consistent skincare routine is the secret to radiant, healthy skin. Learn the essential steps and products you need to build a routine that works for you.',
+      href: '#',
       isFeatured: true,
-      reviews: 'A game changer for my dry skin. It absorbs quickly and my skin feels so plump and hydrated. I use it morning and night. A bit pricey, but a little goes a long way.',
-      affiliateLink: '#',
-      attributes: { brand: 'DermaPure', skinType: 'Dry', mood: 'Relaxing' },
-    },
-    {
-      id: 'sc2',
-      name: 'Clarifying Clay Mask',
-      image: 'https://placehold.co/600x400',
-      price: 35.0,
-      rating: 4.6,
-      reviews: "Great for my oily, acne-prone skin. It really helps to clear out my pores without stripping my skin. I use it once a week. Some people with sensitive skin found it a bit too strong.",
-      affiliateLink: '#',
-      attributes: { brand: 'ClearSkin', skinType: 'Oily' },
-    },
-    {
-      id: 'sc3',
-      name: 'Vitamin C Brightening Eye Cream',
-      image: 'https://placehold.co/600x400',
-      price: 55.0,
-      rating: 4.7,
-      reviews: "I've noticed a visible difference in my dark circles since using this. It's gentle and doesn't irritate my eyes. The texture is light and absorbs well under makeup. Highly recommend for tired eyes.",
-      affiliateLink: '#',
-      attributes: { brand: 'GlowUp', skinType: 'Sensitive', vibe: 'Natural' },
     },
   ],
-  'safety-tools': [
+  'safety-bids': [
+     {
+      id: 'st3',
+      title: 'Top 5 Micro-Compact Firearms for Personal Safety',
+      image: 'https://placehold.co/600x400',
+      author: 'Chris Kyle',
+      publishedDate: '2024-05-01',
+      excerpt: 'When it comes to personal protection, size and reliability matter. We review the top 5 micro-compact firearms on the market, focusing on ease of use, concealability, and safety features.',
+      href: '#',
+    },
     {
       id: 'st1',
-      name: 'Defender Personal Alarm',
+      title: 'Traveling Solo? Essential Self-Defense Tips for Women',
       image: 'https://placehold.co/600x400',
-      price: 29.99,
-      rating: 4.9,
+      author: 'Samantha Jones',
+      publishedDate: '2024-04-28',
+      excerpt: "Exploring the world on your own is an empowering experience. Boost your confidence with these practical self-defense tips and situational awareness techniques for female solo travelers.",
+      href: '#',
       isFeatured: true,
-      reviews: "It's incredibly loud! Small enough to fit on my keychain. Gives me peace of mind when walking alone at night. The pin is easy to pull but won't come out accidentally. The flashlight is a nice bonus.",
-      affiliateLink: '#',
-      attributes: { brand: 'SafeGuard', safetyLevel: 'High', power: 'Battery', material: 'ABS Plastic' },
-    },
-    {
-      id: 'st2',
-      name: 'Tactical Defense Pen',
-      image: 'https://placehold.co/600x400',
-      price: 22.5,
-      rating: 4.7,
-      reviews: "A sturdy, well-made pen that writes smoothly. The glass breaker tip is solid. It's discreet and doesn't draw attention. A great everyday carry tool for an extra layer of safety.",
-      affiliateLink: '#',
-      attributes: { brand: 'ArmorInk', safetyLevel: 'Medium', material: 'Stainless Steel' },
-    },
-    {
-      id: 'st3',
-      name: 'Stealth-2 Micro Compact Firearm',
-      image: 'https://placehold.co/600x400',
-      price: 350.0,
-      rating: 4.8,
-      reviews: 'Excellent conceal carry option. Lightweight, reliable, and surprisingly accurate for its size. Always remember to treat every firearm as if it were loaded. The trigger guard is well-designed to prevent accidental discharge. Proper training is a must.',
-      affiliateLink: '#',
-      attributes: { brand: 'Guardian Arms', safetyLevel: 'High' },
     },
   ],
   pleasure: [
     {
       id: 'pl1',
-      name: 'The Rosebud Whisper-Quiet Vibrator',
+      title: '5 Must-Have Pleasure Accessories for Ultimate Self-Care',
       image: 'https://placehold.co/600x400',
-      price: 89.0,
-      rating: 4.9,
+      author: 'Dr. Ruth',
+      publishedDate: '2024-04-25',
+      excerpt: 'Self-care goes beyond bubble baths and face masks. Explore our top 5 pleasure accessories designed to enhance your intimacy and personal well-being.',
+      href: '#',
       isFeatured: true,
-      reviews: "Absolutely stunning design and incredibly effective. The multiple patterns are fantastic and it's so quiet you could use it anywhere. The silicone is body-safe and feels amazing. Worth every penny.",
-      affiliateLink: '#',
-      attributes: { brand: 'Pleasure Garden', quietLevel: 'Whisper-Quiet', power: 'Rechargeable', material: 'Silicone' },
+    },
+  ],
+  entertainment: [
+    {
+      id: 'en1',
+      title: 'Book Review: Circe by Madeline Miller',
+      image: 'https://placehold.co/600x400',
+      author: 'Literary Lori',
+      publishedDate: '2024-05-18',
+      excerpt: 'A deep dive into Madeline Miller\'s "Circe," a powerful and mesmerizing retelling of the Greek goddess\'s story of self-discovery and strength.',
+      href: '#',
+    },
+     {
+      id: 'en2',
+      title: 'Top 10 Games for Your Next Road Trip',
+      image: 'https://placehold.co/600x400',
+      author: 'Gamer Gabby',
+      publishedDate: '2024-05-12',
+      excerpt: 'Long drives don\'t have to be boring. Keep everyone entertained with our list of the top 10 games to play in the car, from classic license plate games to modern app-based challenges.',
+      href: '#',
+    },
+  ],
+  'travel-deals': [
+     {
+      id: 'td1',
+      title: 'Top 25 Road Trip Accessories You Need This Summer',
+      image: 'https://placehold.co/600x400',
+      author: 'Wanderlust Wendy',
+      publishedDate: '2024-05-22',
+      excerpt: "Hitting the open road? Don't leave home without these essentials. We've compiled a list of the top 25 road trip accessories, including 10 must-haves for a comfortable, safe, and fun journey.",
+      href: '#',
+      isFeatured: true,
+    },
+    {
+      id: 'td2',
+      title: 'America\'s Local Eats: 25 Hidden Gems Across the US',
+      image: 'https://placehold.co/600x400',
+      author: 'Foodie Frank',
+      publishedDate: '2024-05-19',
+      excerpt: 'Forget the big chains. We\'re taking you on a culinary tour of America\'s best-kept secrets, from a legendary burger joint in California to a crawfish shack in Vegas.',
+      href: '#',
     },
   ],
   // Add mock products for other categories
   hair: [],
   fragrance: [],
   wellness: [],
-  'travel-deals': [],
   'home-security': [],
   'digital-safety': [],
   'self-defense': [],
   'lingerie-bids': [],
   'heels-bids': [],
-  'safety-bids': [],
   protection: [],
   entrepreneurial: [],
-  entertainment: [],
 };
