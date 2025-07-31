@@ -17,6 +17,16 @@ export default function Home() {
           </Button>
         </Link>
       </div>
+      <footer className="w-full max-w-md text-center py-4">
+        <div className="flex justify-center gap-4 text-sm text-gray-500">
+          <Link href="/privacy-policy" className="hover:underline">
+            Privacy Policy
+          </Link>
+          <Link href="/terms-of-service" className="hover:underline">
+            Terms of Service
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 }
