@@ -3,10 +3,11 @@ import WhyILeft from '@/components/why-i-left';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Phone } from 'lucide-react';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen bg-gray-50 text-gray-800 p-4 space-y-8 pt-8">
+    <div className="flex flex-col items-center justify-start min-h-screen p-4 space-y-8 pt-8">
       <WhyILeft />
       <DailyWins />
       <div className="w-full max-w-md">
@@ -18,13 +19,14 @@ export default function Home() {
         </Link>
       </div>
       <footer className="w-full max-w-md text-center py-4">
-        <div className="flex justify-center gap-4 text-sm text-gray-500">
+        <div className="flex justify-center items-center gap-4 text-sm text-muted-foreground">
           <Link href="/privacy-policy" className="hover:underline">
             Privacy Policy
           </Link>
           <Link href="/terms-of-service" className="hover:underline">
             Terms of Service
           </Link>
+          <ThemeToggle />
         </div>
       </footer>
     </div>

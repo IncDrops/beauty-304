@@ -18,9 +18,9 @@ export default function QuickExitButton() {
     return (
         <div className="fixed bottom-5 right-5 z-50">
              <Button 
-                variant="destructive" 
+                variant="default" 
                 size="icon" 
-                className="h-14 w-14 rounded-full shadow-2xl"
+                className="h-14 w-14 rounded-full shadow-2xl bg-black hover:bg-gray-800"
                 onClick={handleExit}
                 aria-label="Quick Exit"
             >
