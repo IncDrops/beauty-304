@@ -2,11 +2,8 @@
 
 import { LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useRouter } from 'next/navigation';
 
 export default function QuickExitButton() {
-    const router = useRouter();
-
     const handleExit = (e: React.MouseEvent<HTMLButtonElement>) => {
         // Prevent Next.js router from interfering
         e.preventDefault();
