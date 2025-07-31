@@ -3,6 +3,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { Inter } from 'next/font/google';
+import QuickExitButton from '@/components/quick-exit-button';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, 'antialiased min-h-screen flex flex-col')}>
         <main className="flex-1">{children}</main>
+        <QuickExitButton />
         <Toaster />
       </body>
     </html>

@@ -1,0 +1,31 @@
+"use client";
+
+import { LogOut } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+
+export default function QuickExitButton() {
+    const router = useRouter();
+
+    const handleExit = (e: React.MouseEvent<HTMLButtonElement>) => {
+        // Prevent Next.js router from interfering
+        e.preventDefault();
+        e.stopPropagation();
+        // Redirect the entire window to an external, neutral site.
+        window.location.href = 'https://www.google.com';
+    };
+
+    return (
+        <div className="fixed bottom-5 right-5 z-50">
+             <Button 
+                variant="destructive" 
+                size="icon" 
+                className="h-14 w-14 rounded-full shadow-2xl"
+                onClick={handleExit}
+                aria-label="Quick Exit"
+            >
+                <LogOut className="h-7 w-7" />
+            </Button>
+        </div>
+    );
+}
