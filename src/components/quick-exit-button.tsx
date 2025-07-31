@@ -9,7 +9,7 @@ export default function QuickExitButton() {
         e.preventDefault();
         e.stopPropagation();
         // Redirect the entire window to an external, neutral site.
-        window.location.href = 'https://www.google.com';
+        window.location.href = 'https://en.wikipedia.org';
     };
 
     return (
