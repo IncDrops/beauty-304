@@ -2,7 +2,7 @@ import DailyWins from '@/components/daily-wins';
 import WhyILeft from '@/components/why-i-left';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Phone, MapPinOff } from 'lucide-react';
+import { Phone, MapPinOff, ClipboardList } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Home() {
@@ -10,6 +10,14 @@ export default function Home() {
     <div className="flex flex-col items-center justify-start min-h-screen p-4 space-y-8 pt-8">
       <WhyILeft />
       <DailyWins />
+      <div className="w-full max-w-md grid grid-cols-1 gap-4">
+        <Link href="/planner" passHref>
+          <Button variant="secondary" className="w-full h-12 text-lg">
+            <ClipboardList className="mr-2 h-5 w-5" />
+            My Planner
+          </Button>
+        </Link>
+      </div>
       <div className="w-full max-w-md grid grid-cols-1 md:grid-cols-2 gap-4">
         <Link href="/emergency-contacts" passHref>
           <Button variant="secondary" className="w-full h-12 text-lg">
