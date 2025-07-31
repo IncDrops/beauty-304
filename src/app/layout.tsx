@@ -2,12 +2,14 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
-import { Header } from '@/components/header';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '304Beauty Navigator',
+  title: 'ExitRamp',
   description:
-    'A curated beauty and survival search engine for women — mixing glam, self-care, and street-smart safety.',
+    'A safety net for survivors of street sex work/trafficking, designed to interrupt moments of crisis, celebrate progress, and reduce harm.',
 };
 
 export default function RootLayout({
@@ -16,21 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Belleza&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={cn('font-body antialiased min-h-screen flex flex-col')}>
-        <Header />
+    <html lang="en">
+      <body className={cn(inter.className, 'antialiased min-h-screen flex flex-col')}>
         <main className="flex-1">{children}</main>
         <Toaster />
       </body>
