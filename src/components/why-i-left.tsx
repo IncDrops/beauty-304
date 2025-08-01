@@ -76,7 +76,7 @@ export default function WhyILeft() {
         </Carousel>
         <Button
           onClick={showNextAffirmation}
-          className="w-full h-12 text-lg"
+          className="w-full h-12 text-lg transition-transform active:scale-95"
         >
           <RefreshCw className={`mr-2 h-5 w-5 ${isSpinning ? 'animate-spin' : ''}`} />
           Show me another reason

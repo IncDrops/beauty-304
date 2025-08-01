@@ -10,13 +10,13 @@ export default function TermsOfServicePage() {
     });
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen bg-gray-50 text-gray-800 p-4 pt-8">
-      <Card className="w-full max-w-2xl shadow-lg">
+    <div className="flex flex-col items-center justify-start min-h-screen p-4 pt-8">
+      <Card className="w-full max-w-2xl shadow-lg glassmorphic-card">
         <CardHeader>
           <CardTitle className="text-2xl font-bold">ExitRamp Terms of Service</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6 text-base leading-relaxed">
-            <p className="text-sm text-gray-500">Last Updated: {today}</p>
+            <p className="text-sm text-muted-foreground">Last Updated: {today}</p>
 
             <h2 className="text-xl font-semibold">Purpose</h2>
             <p>
