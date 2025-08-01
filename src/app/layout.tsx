@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     'A safety net for survivors of street sex work/trafficking, designed to interrupt moments of crisis, celebrate progress, and reduce harm.',
   icons: {
-    icon: '/exit-icon.jpg',
+    icon: '/exit-ramp-icon.png',
   },
 };
 
