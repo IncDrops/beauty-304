@@ -13,14 +13,14 @@ export default function TermsOfServicePage() {
     <div className="flex flex-col items-center justify-start min-h-screen p-4 pt-8">
       <Card className="w-full max-w-2xl shadow-lg glassmorphic-card">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold">ExitRamp Terms of Service</CardTitle>
+          <CardTitle className="text-2xl font-bold">304 Beauty Terms of Service</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6 text-base leading-relaxed">
             <p className="text-sm text-muted-foreground">Last Updated: {today}</p>
 
             <h2 className="text-xl font-semibold">Purpose</h2>
             <p>
-                ExitRamp is a peer-created tool for harm reduction and crisis support. It is not a substitute for professional help.
+                304 Beauty is a peer-created tool for harm reduction and crisis support. It is not a substitute for professional help.
             </p>
 
             <h2 className="text-xl font-semibold">No Warranty</h2>
@@ -30,7 +30,7 @@ export default function TermsOfServicePage() {
 
             <h2 className="text-xl font-semibold">Discretion Advised</h2>
             <p>
-                You’re responsible for safeguarding your device (e.g., using a PIN lock). ExitRamp’s quick-exit feature helps but isn’t foolproof.
+                You’re responsible for safeguarding your device (e.g., using a PIN lock). 304 Beauty’s quick-exit feature helps but isn’t foolproof.
             </p>
 
             <h2 className="text-xl font-semibold">Changes</h2>

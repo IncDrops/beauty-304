@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
     <div className="flex flex-col items-center justify-start min-h-screen p-4 pt-8">
       <Card className="w-full max-w-2xl shadow-lg glassmorphic-card">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold">ExitRamp Privacy Policy</CardTitle>
+          <CardTitle className="text-2xl font-bold">304 Beauty Privacy Policy</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6 text-base leading-relaxed">
           <p className="text-sm text-muted-foreground">Last Updated: {today}</p>
@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-xl font-semibold">We Do Not Collect Your Data. Ever.</h2>
           <p className="font-bold">No Tracking, No Storage, No BS</p>
           <p>
-            ExitRamp does not collect, store, or share your personal data, location history, or app usage.
+            304 Beauty does not collect, store, or share your personal data, location history, or app usage.
           </p>
           <p>
             Everything (hotspots, journal entries, contacts) stays only on your device. We have no servers.
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
 
           <h2 className="text-xl font-semibold">No Monetization</h2>
           <p>
-            ExitRamp has no ads, no subscriptions, and no profit motive. We’ll never sell data because we don’t have any.
+            304 Beauty has no ads, no subscriptions, and no profit motive. We’ll never sell data because we don’t have any.
           </p>
 
           <h2 className="text-xl font-semibold">Your Rights</h2>
