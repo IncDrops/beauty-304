@@ -1,12 +1,13 @@
 "use client";
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter, DialogClose } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Phone, MessageSquare, PlusCircle, Trash2, Edit } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 interface Contact {
   id: number;
@@ -185,6 +186,15 @@ export default function EmergencyContacts() {
             </Dialog>
         </div>
       </CardContent>
+       <CardFooter className="flex-col items-center justify-center pt-4">
+          <div className="w-full">
+            <Link href="/" passHref>
+                <Button variant="outline" className="w-full">
+                    Back to Home
+                </Button>
+            </Link>
+        </div>
+      </CardFooter>
     </Card>
   );
 }
