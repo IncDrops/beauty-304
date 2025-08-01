@@ -3,7 +3,6 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { Inter } from 'next/font/google';
-import QuickExitButton from '@/components/quick-exit-button';
 import { ThemeProvider } from '@/components/theme-provider';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -29,7 +28,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="flex-1">{children}</main>
-          <QuickExitButton />
           <Toaster />
         </ThemeProvider>
       </body>

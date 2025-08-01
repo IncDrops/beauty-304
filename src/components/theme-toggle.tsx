@@ -1,40 +1,39 @@
 'use client';
 
 import * as React from 'react';
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, Monitor } from 'lucide-react';
 import { useTheme } from 'next-themes';
-
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 
 export function ThemeToggle() {
-  const { setTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme('light')}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div className="grid grid-cols-3 gap-1 h-full">
+      <Button
+        variant={theme === 'light' ? 'default' : 'secondary'}
+        onClick={() => setTheme('light')}
+        className="h-full text-lg w-full"
+      >
+        <Sun className="h-5 w-5 mr-2" />
+        Light
+      </Button>
+      <Button
+        variant={theme === 'dark' ? 'default' : 'secondary'}
+        onClick={() => setTheme('dark')}
+        className="h-full text-lg w-full"
+      >
+        <Moon className="h-5 w-5 mr-2" />
+        Dark
+      </Button>
+      <Button
+        variant={theme === 'system' ? 'default' : 'secondary'}
+        onClick={() => setTheme('system')}
+        className="h-full text-lg w-full"
+      >
+        <Monitor className="h-5 w-5 mr-2" />
+        System
+      </Button>
+    </div>
   );
 }
