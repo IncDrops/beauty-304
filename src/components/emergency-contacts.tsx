@@ -118,7 +118,7 @@ export default function EmergencyContacts() {
   }
 
   return (
-    <Card className="w-full max-w-md text-center shadow-lg">
+    <Card className="w-full max-w-md text-center glassmorphic-card">
       <CardHeader>
         <CardTitle className="text-2xl font-bold">Emergency Contacts</CardTitle>
         <CardDescription>

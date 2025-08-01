@@ -100,7 +100,7 @@ export default function DailyWins() {
   const todaysWins = wins.filter(w => w.date === todayStr);
 
   return (
-    <Card className="w-full max-w-md text-center shadow-lg">
+    <Card className="w-full max-w-md text-center glassmorphic-card">
       <CardHeader>
         <CardTitle className="text-2xl font-bold">Daily Wins</CardTitle>
       </CardHeader>
@@ -132,7 +132,7 @@ export default function DailyWins() {
           )}
         </div>
       </CardContent>
-      <CardFooter className="flex justify-center bg-gray-50 p-4">
+      <CardFooter className="flex justify-center bg-transparent p-4">
         <div className="text-lg font-semibold">
           Daily Streak: <span className="text-primary">{streak} {streak === 1 ? 'Day' : 'Days'}</span>
         </div>

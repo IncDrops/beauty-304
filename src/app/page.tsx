@@ -12,7 +12,7 @@ export default function Home() {
       <DailyWins />
       <div className="w-full max-w-md grid grid-cols-1 gap-4">
         <Link href="/planner" passHref>
-          <Button variant="secondary" className="w-full h-12 text-lg">
+          <Button variant="secondary" className="w-full h-12 text-lg glassmorphic-card">
             <ClipboardList className="mr-2 h-5 w-5" />
             My Planner
           </Button>
@@ -20,13 +20,13 @@ export default function Home() {
       </div>
       <div className="w-full max-w-md grid grid-cols-1 md:grid-cols-2 gap-4">
         <Link href="/emergency-contacts" passHref>
-          <Button variant="secondary" className="w-full h-12 text-lg">
+          <Button variant="secondary" className="w-full h-12 text-lg glassmorphic-card">
             <Phone className="mr-2 h-5 w-5" />
             Emergency Contacts
           </Button>
         </Link>
         <Link href="/hotspots" passHref>
-          <Button variant="secondary" className="w-full h-12 text-lg">
+          <Button variant="secondary" className="w-full h-12 text-lg glassmorphic-card">
             <MapPinOff className="mr-2 h-5 w-5" />
             Manage Hotspots
           </Button>
@@ -34,10 +34,10 @@ export default function Home() {
       </div>
       <footer className="w-full max-w-md text-center py-4">
         <div className="flex justify-center items-center gap-4 text-sm text-muted-foreground">
-          <Link href="/privacy-policy" className="hover:underline">
+          <Link href="/privacy-policy" className="hover:underline text-white">
             Privacy Policy
           </Link>
-          <Link href="/terms-of-service" className="hover:underline">
+          <Link href="/terms-of-service" className="hover:underline text-white">
             Terms of Service
           </Link>
           <ThemeToggle />

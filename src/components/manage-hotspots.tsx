@@ -67,7 +67,7 @@ export default function ManageHotspots() {
   };
 
   return (
-    <Card className="w-full max-w-md shadow-lg">
+    <Card className="w-full max-w-md glassmorphic-card">
       <CardHeader>
         <CardTitle className="text-2xl font-bold flex items-center gap-2"><MapPinOff /> Manage Hotspots</CardTitle>
         <CardDescription>

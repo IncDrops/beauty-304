@@ -159,7 +159,7 @@ function CalendarView() {
                 mode="single"
                 selected={date}
                 onSelect={setDate}
-                className="rounded-md border"
+                className="rounded-md border glassmorphic-card"
             />
         </div>
     );
@@ -168,7 +168,7 @@ function CalendarView() {
 
 export default function Planner() {
   return (
-    <Card className="w-full max-w-2xl shadow-lg">
+    <Card className="w-full max-w-2xl glassmorphic-card">
       <CardHeader>
         <CardTitle className="text-2xl font-bold">My Planner</CardTitle>
         <CardDescription>
