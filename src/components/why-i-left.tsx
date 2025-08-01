@@ -20,6 +20,7 @@ const defaultAffirmations = [
 export default function WhyILeft() {
   const [affirmations, setAffirmations] = useState<string[]>(defaultAffirmations);
   const [api, setApi] = useState<CarouselApi>();
+  const [isSpinning, setIsSpinning] = useState(false);
 
   useEffect(() => {
     try {
@@ -37,6 +38,9 @@ export default function WhyILeft() {
 
   const showNextAffirmation = useCallback(() => {
     api?.scrollNext();
+    setIsSpinning(true);
+    // The timeout duration should be aligned with the CSS animation duration
+    setTimeout(() => setIsSpinning(false), 500); 
   }, [api]);
 
   return (
@@ -48,6 +52,9 @@ export default function WhyILeft() {
         <Carousel
           setApi={setApi}
           className="w-full"
+          opts={{
+            loop: true,
+          }}
           plugins={[
             Autoplay({
               delay: 5000,
@@ -71,7 +78,7 @@ export default function WhyILeft() {
           onClick={showNextAffirmation}
           className="w-full h-12 text-lg"
         >
-          <RefreshCw className="mr-2 h-5 w-5" />
+          <RefreshCw className={`mr-2 h-5 w-5 ${isSpinning ? 'animate-spin' : ''}`} />
           Show me another reason
         </Button>
       </CardContent>
