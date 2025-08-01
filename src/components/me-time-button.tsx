@@ -29,7 +29,7 @@ export default function MeTimeButton() {
     };
 
     return (
-        <Button onClick={handleExit} className="w-full h-12 text-lg" variant="destructive">
+        <Button onClick={handleExit} variant="secondary" className="w-full h-12 text-lg glassmorphic-card">
             <LogOut className="mr-2 h-5 w-5" />
             ME TIME
         </Button>

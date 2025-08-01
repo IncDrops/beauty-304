@@ -35,7 +35,7 @@ export default function Home() {
         </Link>
       </div>
       <div className="w-full max-w-md grid grid-cols-1 gap-4">
-         <MeTimeButton />
+        <MeTimeButton />
       </div>
        <div className="w-full max-w-md grid grid-cols-1 md:grid-cols-2 gap-4">
          <Link href="/me-time" passHref>
