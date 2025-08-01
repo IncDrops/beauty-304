@@ -44,11 +44,9 @@ export default function Home() {
             ME TIME Settings
           </Button>
         </Link>
-        <div className="glassmorphic-card rounded-md flex items-center justify-center">
-          <ClientOnly>
-            <ThemeToggle />
-          </ClientOnly>
-        </div>
+        <ClientOnly>
+          <ThemeToggle />
+        </ClientOnly>
       </div>
       <footer className="w-full max-w-md text-center py-4">
         <div className="flex justify-center items-center gap-4 text-sm text-muted-foreground">
