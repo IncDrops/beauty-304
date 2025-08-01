@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: 'ExitRamp',
   description:
     'A safety net for survivors of street sex work/trafficking, designed to interrupt moments of crisis, celebrate progress, and reduce harm.',
+  icons: {
+    icon: '/exit-icon.jpg',
+  },
 };
 
 export default function RootLayout({
