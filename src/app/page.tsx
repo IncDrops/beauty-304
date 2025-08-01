@@ -44,7 +44,7 @@ export default function Home() {
             ME TIME Settings
           </Button>
         </Link>
-        <div className="glassmorphic-card rounded-md">
+        <div className="glassmorphic-card rounded-md flex items-center justify-center">
           <ClientOnly>
             <ThemeToggle />
           </ClientOnly>
