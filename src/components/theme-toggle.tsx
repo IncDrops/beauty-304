@@ -15,7 +15,7 @@ export function ThemeToggle() {
         onClick={() => setTheme('light')}
         className="h-full text-lg w-full"
       >
-        <Sun className="h-5 w-5 mr-2" />
+        <Sun className="h-5 w-5" />
         Light
       </Button>
       <Button
@@ -23,7 +23,7 @@ export function ThemeToggle() {
         onClick={() => setTheme('dark')}
         className="h-full text-lg w-full"
       >
-        <Moon className="h-5 w-5 mr-2" />
+        <Moon className="h-5 w-5" />
         Dark
       </Button>
       <Button
@@ -31,7 +31,7 @@ export function ThemeToggle() {
         onClick={() => setTheme('system')}
         className="h-full text-lg w-full"
       >
-        <Monitor className="h-5 w-5 mr-2" />
+        <Monitor className="h-5 w-5" />
         System
       </Button>
     </div>
