@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Phone, MapPinOff, ClipboardList, Settings, LogOut } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import MeTimeButton from '@/components/me-time-button';
+import { ClientOnly } from '@/components/client-only';
 
 export default function Home() {
   return (
@@ -44,7 +45,9 @@ export default function Home() {
           </Button>
         </Link>
         <div className="glassmorphic-card rounded-md">
-          <ThemeToggle />
+          <ClientOnly>
+            <ThemeToggle />
+          </ClientOnly>
         </div>
       </div>
       <footer className="w-full max-w-md text-center py-4">
