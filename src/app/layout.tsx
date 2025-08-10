@@ -8,7 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'ExitRamp',
+  title: '304 BEAUTY',
   description:
     'A safety net for survivors of street sex work/trafficking, designed to interrupt moments of crisis, celebrate progress, and reduce harm.',
   icons: {
